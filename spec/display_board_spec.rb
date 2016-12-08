@@ -145,11 +145,12 @@ describe "#display_board in 'lib/display_board.rb" do
 
       # Define the board with values that should create the desired output
       # *** Edit the line below ***
-      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "] # This is not correct
+      board = Array.new(9, 'X')
 
       # Don't touch the following lines.
       output = capture_puts{ display_board(board) } if defined?(display_board)
       rows = output.split("\n")
+
 
       # Each line that starts with expect represents a row in the ouput.
       # The desired characters a row must include are provided by the String
@@ -172,7 +173,13 @@ describe "#display_board in 'lib/display_board.rb" do
       # expect(rows[4]).to eq("   |   |   ")
 
       # *** Comment the line below by adding a # at the line start ***
-      expect(true).to be(true)
+      x_row = " X | X | X "
+      sep = "-" * 11
+      expect(rows[0]).to eq(x_row)
+      expect(rows[1]).to eq(sep)
+      expect(rows[2]).to eq(x_row)
+      expect(rows[3]).to eq(sep)
+      expect(rows[4]).to eq(x_row)
     end
 
     it 'prints an entire board full of Os' do
@@ -182,9 +189,20 @@ describe "#display_board in 'lib/display_board.rb" do
       # Hint: You should be able to copy the code in the previous it example
       # and make a few simple edits to convert the previous example to this
       # example's situation.
+      board = Array.new(9, 'O')
+
+      # Don't touch the following lines.
+      output = capture_puts{ display_board(board) } if defined?(display_board)
+      rows = output.split("\n")
 
       # *** Comment the line below by adding a # at the line start ***
-      expect(true).to be(true)
+      o_row = " O | O | O "
+      sep = "-" * 11
+      expect(rows[0]).to eq(o_row)
+      expect(rows[1]).to eq(sep)
+      expect(rows[2]).to eq(o_row)
+      expect(rows[3]).to eq(sep)
+      expect(rows[4]).to eq(o_row)
     end
   end
 end
