@@ -38,3 +38,9 @@ display_board(the_board)
 the_board = [" "," ","O"," ","O"," ","O"," "," "]
 puts "Turn 7"
 display_board(the_board)
+the_board = ["X","X","X","X","X","X","X","X","X"]
+puts "An Entire Board Full of Xs"
+display_board(the_board)
+the_board = ["O","O","O","O","O","O","O","O","O"]
+puts "An Entire Board Full of Os"
+display_board(the_board)
