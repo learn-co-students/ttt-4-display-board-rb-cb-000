@@ -17,7 +17,7 @@ describe "#display_board in 'lib/display_board.rb" do
 
     it 'prints a board with an X in the center position' do
       board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
-
+      
       output = capture_puts{ display_board(board) }
       rows = output.split("\n")
 
